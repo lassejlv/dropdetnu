@@ -3,22 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:gen": "bunx drizzle-kit generate:pg",
+    "db:mig": "bun run src/lib/db/migrate.ts",
+    "db:stu": "bunx drizzle-kit studio"
   },
   "dependencies": {
+    "@libsql/client": "^0.6.0",
+    "@neondatabase/serverless": "^0.9.1",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@supabase/ssr": "^0.3.0",
+    "@t3-oss/env-core": "^0.10.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.30.10",
+    "lucide-react": "^0.378.0",
+    "next": "14.2.3",
+    "pg": "^8.11.5",
+    "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.6"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "drizzle-kit": "^0.20.17",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
